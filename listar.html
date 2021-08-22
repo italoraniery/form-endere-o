@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Aula 11 - Form de Endereço</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+  </head>
+  <body onload="atualizarTabela()" class="container" style="background-color: #DDDDDD;">
+    <section class="row mt-5">
+      <div class="col-md-12">
+        <div class="card card-body">
+          <h2>Gerenciamento de Endereço</h2>
+          <hr>
+
+          <div class="mb-5">
+            <a href="index.html" class="btn btn-outline-primary">Cadastro de Endereço</a>
+            <a href="listar.html" class="btn btn-primary">Listar Endereços</a>
+         </div>
+
+         <table id="tabela" class="table table-striped table-hover">
+           <thead class="table-dark">
+             <tr>
+               <th>Nome</th>
+               <th>CEP</th>
+               <th>Lograouro</th>
+               <th>Número</th>
+               <th>Bairro</th>
+               <th>Cidade</th>
+               <th>UF</th>
+               <th>Ações</th>
+             </tr>
+           </thead>
+           <tbody id="tabela-enderecos">
+
+           </tbody>
+         </table>
+
+        </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+    <script src="js/constantes.js"></script>
+    <script src="js/storage.js"></script>
+  </body>
+</html>

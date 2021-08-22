@@ -1,35 +1,41 @@
-const INPUT_CEP = document.getElementById('cep');
-const INPUT_LOGRADOURO = document.getElementById('logradouro');
-const INPUT_NUMERO = document.getElementById('numero');
-const INPUT_BAIRRO = document.getElementById('bairro');
-const INPUT_CIDADE = document.getElementById('cidade');
-const INPUT_UF = document.getElementById('uf');
 
 document.getElementById('form-endereco').addEventListener('submit', (event) => {
   event.preventDefault();
 
+ let valid = true;
+
   if (INPUT_CEP.value.length < 8) {
+    valid = false;
     INPUT_CEP.classList.add('is-invalid');
   }
 
   if (INPUT_LOGRADOURO.value ==='') {
+    valid = false;
     INPUT_LOGRADOURO.classList.add('is-invalid');
   }
 
   if (INPUT_NUMERO.value ==='') {
+    valid = false;
     INPUT_NUMERO.classList.add('is-invalid');
   }
 
   if (INPUT_BAIRRO.value ==='') {
+    valid = false;
     INPUT_BAIRRO.classList.add('is-invalid');
   }
 
   if (INPUT_CIDADE.value ==='') {
+    valid = false;
     INPUT_CIDADE.classList.add('is-invalid');
   }
 
   if (INPUT_UF.value.length !== 2) {
+    valid = false;
     INPUT_UF.classList.add('is-invalid');
+  }
+
+  if (valid === true) {
+    inserirEndereco();
   }
 });
 
