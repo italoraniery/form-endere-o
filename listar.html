@@ -2,7 +2,7 @@
 <html lang="pt-br" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Aula 11 - Form de Endereço</title>
+    <title>Aula 12 - Form de Endereço</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
   </head>
@@ -40,6 +40,85 @@
       </div>
     </section>
 
+
+<!-- Modal -->
+<div class="modal fade" id="modalExcluir" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Excluir Loja</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger">
+          <p>
+            <strong>Ops</strong>, você está pestes a excluir
+            a loja <strong id="excluir-nome">...</strong>.
+            <br>
+            Você Confirma?
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button id="excluir-id" onclick="excluirItem()"type="button" class="btn btn-primary" data-bs-dismiss="modal">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Loja</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form>
+      <div class="modal-body">
+        <div class="alert alert-info">
+          <p>
+            <strong>Ops</strong>, você está editando
+            a loja <strong id="editar-nome">...</strong>.
+            <br>
+            Você Confirma?
+          </p>
+        </div>
+        <label for="nome">Nome do Estabelecimento</label>
+        <input type="text" id="nome" class="form-control mb-3" placeholder="Apenas números">
+
+        <label for="cep">CEP</label>
+        <input type="text" id="cep" class="form-control mb-3" placeholder="Apenas números">
+
+        <label for="logradouro">Logradouro</label>
+        <input type="text" id="logradouro" class="form-control mb-3" placeholder="Rua, Av, Travessa">
+
+        <label for="numero">Número</label>
+        <input type="number" id="numero" class="form-control mb-3" placeholder="123">
+
+        <label for="bairro">Bairro</label>
+        <input type="text" id="bairro" class="form-control mb-3" placeholder="Informe o bairro">
+
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" class="form-control mb-3" placeholder="Informe a cidade">
+
+        <label for="uf">UF</label>
+        <input type="text" id="uf" class="form-control mb-3" placeholder="Informe o estado">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button id="editar-id" onclick="editarItem()" class="btn btn-primary" data-bs-dismiss="modal">Confirmar</button>
+      </div>
+     </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
